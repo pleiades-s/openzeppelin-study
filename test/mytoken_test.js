@@ -40,5 +40,11 @@ contract('MyToken', () => {
             // assert.equal(decimals.toString(), _decimals.toString());
         });
 
+        it('checking if tx.origin is deprecated', async function() {
+            const origin = await this.token.getOrigin();
+            console.log(origin)
+            assert(origin != '');
+        });
+
     })
 })
